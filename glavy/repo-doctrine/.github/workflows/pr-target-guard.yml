@@ -1,0 +1,89 @@
+# Волна ×8 · гард против brownout `pull_request_target`
+# GitHub: temporary enforcement 09.11 и 16.11 (16:00–18:00 UTC),
+# постоянная — с 02.12.2026. Публичные репы с этим триггером и без
+# policy будут ронять релизные пайплайны. Гард раз в две недели сканирует
+# воркфлоу публичных клеток роя (ростер — аккаунт-SBOM edinyy-svod).
+# Транспорт — git sparse-клоны, НЕ REST API: GITHUB_TOKEN репо-скоупа даёт
+# 401 на чужие репо, код-поиск — 401 без юзер-токена, анонимный REST —
+# 60/ч на общий IP (уроки живых прогонов ×8). Приватные клетки сканирует
+# владелец (SWARM_TOKEN вне CI).
+# Срез 09.11 (вход волны ×8): 0 хитов по всему аккаунту.
+name: pr-target-guard — brownout-гард аккаунта
+
+on:
+  schedule:
+    - cron: '21 3 2,16 * *'   # 2-е и 16-е числа — против дат принуждения
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-target-guard
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    name: Скан воркфлоу публичных клеток на pull_request_target
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout (ростер-зеркало agentic/)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Скан по ростеру (git blob:none-клоны)
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import json, os, subprocess, time, urllib.request, urllib.error
+
+          WORK = '/tmp/prtg'
+          # ростер — из чекаута этого репо (зеркало канона edinyy-svod/sbom, T01)
+          roster = json.load(open('agentic/РОСТЕР-АККАУНТА.json', encoding='utf-8'))
+          comps = roster['cells']
+          print(f"ростер (снимок {roster['snapshot'][:10]}): {len(comps)} клеток")
+
+          os.makedirs(WORK, exist_ok=True)
+          hits, scanned, skipped = [], 0, 0
+          for cell in comps:
+              name = cell['name']
+              if cell['archived'] == 'true' or cell['visibility'] == 'private':
+                  skipped += 1
+                  continue
+              dest = f'{WORK}/{name}'
+              subprocess.run(['rm', '-rf', dest], check=True)
+              rc = subprocess.run(
+                  ['git', 'clone', '-q', '--depth', '1', '--filter=blob:none',
+                   f'https://github.com/rtynbirf/{name}.git', dest],
+                  capture_output=True, text=True, timeout=180)
+              if rc.returncode != 0:
+                  skipped += 1
+                  print(f'  SKIP {name}: клон не удался ({(rc.stderr or "").strip()[:80]})')
+                  continue
+              wf_dir = f'{dest}/.github/workflows'
+              if os.path.isdir(wf_dir):
+                  for root, _, files in os.walk(wf_dir):
+                      for fn in files:
+                          p = os.path.join(root, fn)
+                          with open(p, 'rb') as fh:
+                              if b'pull_request_target' in fh.read():
+                                  hits.append((name, os.path.relpath(p, dest)))
+              scanned += 1
+              time.sleep(0.3)
+
+          lines = ['# pr-target-guard (brownout 09.11/16.11, enforcement 02.12)', '',
+                   f'публичных клеток просканировано: **{scanned}** · skip (private/archived/клон не удался): **{skipped}**',
+                   f'хитов `pull_request_target`: **{len(hits)}**']
+          for name, p in hits:
+              lines.append(f'- ❌ `{name}` → `{p}`')
+          lines += ['', 'правило: триггер работает с доверием базовой репы и её секретами;',
+                    'если хит найден — перевести на `pull_request` + явно выписанные permissions,',
+                    'или завести policy-исключение до 02.12.2026.']
+
+          s = os.environ.get('GITHUB_STEP_SUMMARY')
+          if s:
+              open(s, 'a', encoding='utf-8').write('\n'.join(lines) + '\n')
+          print('\n'.join(lines))
+          assert not hits, 'найдены pull_request_target — сработает brownout/enforcement'
+          print('OK: публичные клетки чисты от pull_request_target')
+          PYEOF
