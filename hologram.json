@@ -2,7 +2,7 @@
  "hologram": 1,
  "root": "c223bd4a2f6a56783c1fbdb1b1f671fa61c3150ecf320c82796ea5763043a696",
  "n": 73,
- "storage": 68,
+ "storage": 36,
  "r": 3,
  "self": {
   "name": "github-doctrine",
@@ -306,10 +306,40 @@
  ],
  "flesh": [
   {
+   "name": "agryp",
+   "desc": "agryp — неспящий супервизор агентов уровня PID 1",
+   "lang": "Python",
+   "cluster": "AGENTS"
+  },
+  {
+   "name": "domovoy",
+   "desc": "КНИГА ДОМОВОГО",
+   "lang": "PowerShell",
+   "cluster": ""
+  },
+  {
+   "name": "karaoke-dream",
+   "desc": "Браузерное караоке мечты: неон, гид-вокал, оценка голоса в реальном времени и Зелёный коридор — тональность подстраивается под певца. Vanilla JS + WebAudio, zero-dependency.",
+   "lang": "JavaScript",
+   "cluster": "SINGULAR"
+  },
+  {
+   "name": "polymath-os",
+   "desc": "Personal sovereign media-OS. 5-layer LFS-style self-bootstrapping repo. SINGULYAR Emergent Intent Runtime v0.6. 35 ADRs. make verify 33/33. 290 tests green.",
+   "lang": "Python",
+   "cluster": "OS"
+  },
+  {
    "name": "polymath-stckg-core",
    "desc": "ST-CKG → Lean 4 bridge contract: 11 machine-verified theorems, 0 sorry, kernel-audited axiom surface. GATE 7R runs as CI — the contract defends itself.",
    "lang": "Lean",
    "cluster": ""
+  },
+  {
+   "name": "polymath-tools-atlas",
+   "desc": "ПОЛИМАТ · TOOLS-ATLAS — каталог 665 AI-инструментов по контракту ГОЛОГРАММА v1 (6 слоёв, 3 статуса, закон цепочек). 147 local vs 151 cloud. 3 конфигурации железа. 12 софт-компонентов. Пломбы SHA256. П",
+   "lang": "HTML",
+   "cluster": "ATLASES"
   }
  ]
 }
