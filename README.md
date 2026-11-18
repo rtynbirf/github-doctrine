@@ -1,14 +1,14 @@
 # КНИГА ДОКТРИНЫ
 
 <div align="center">
-  <img src="banner.png" width="100%" alt="Штандарт github-doctrine: обсидиан и расплавленное золото, кузня rtynbirf" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/banner.png" width="100%" alt="Штандарт github-doctrine: обсидиан и расплавленное золото, кузня rtynbirf" />
 </div>
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
-  <img src="repo-muse.svg" width="100%" alt="Муза github-doctrine: мастерская ПЕРВОПЕЧАТНИК, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/repo-muse.svg" width="100%" alt="Муза github-doctrine: мастерская ПЕРВОПЕЧАТНИК, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
   <br/>
-  <img src="forge-divider.svg" width="62%" alt="делитель мастерской ПЕРВОПЕЧАТНИК" />
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/forge-divider.svg" width="62%" alt="делитель мастерской ПЕРВОПЕЧАТНИК" />
 </div>
 <!--ФОРЖ:МУЗА:КОНЕЦ-->
 
