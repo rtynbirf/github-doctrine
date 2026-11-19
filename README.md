@@ -1,3 +1,9 @@
+<div align="center">
+
+<a href="https://github.com/rtynbirf/github-doctrine"><img src="banner.png" width="100%" alt="github-doctrine — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
 # КНИГА ДОКТРИНЫ
 
 <div align="center">
@@ -19,7 +25,7 @@
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 231 | 26 | 93 | 2026-11-19 | 0 |
+| 231 | 22 | 94 | 2026-11-19 | 0 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
 
 
