@@ -37,8 +37,8 @@
 
 | Глава | Источник | Файлов | Коммитов в ориг. | Снимок |
 |---|---|---|---|---|
-| [repo-doctrine](glavy/repo-doctrine/) | [оригинал](https://github.com/rtynbirf/repo-doctrine) | 80 | 140 | `86ef81c` |
-| [github-runbook](glavy/github-runbook/) | [оригинал](https://github.com/rtynbirf/github-runbook) | 119 | 159 | `28d0795` |
+| [repo-doctrine](https://github.com/rtynbirf/github-doctrine/tree/main/glavy/repo-doctrine) | [оригинал](https://github.com/rtynbirf/repo-doctrine) | 80 | 140 | `86ef81c` |
+| [github-runbook](https://github.com/rtynbirf/github-doctrine/tree/main/glavy/github-runbook) | [оригинал](https://github.com/rtynbirf/github-runbook) | 119 | 159 | `28d0795` |
 
 ## О чём эта книга
 
