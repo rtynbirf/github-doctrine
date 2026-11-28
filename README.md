@@ -4,12 +4,6 @@
 
 </div>
 
-# КНИГА ДОКТРИНЫ
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/banner.png" width="100%" alt="Штандарт github-doctrine: обсидиан и расплавленное золото, кузня rtynbirf" />
-</div>
-
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/repo-muse.svg" width="100%" alt="Муза github-doctrine: мастерская ПЕРВОПЕЧАТНИК, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
@@ -20,13 +14,33 @@
 
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
-  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы github-doctrine в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
+  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы github-doctrine №10 в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
 </div>
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 241 | 27 | 156 | 2026-11-28 | 0 |
+| 241 | 24 | 1 | 2026-11-28 | 1 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
+# github-doctrine
+
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/.github/social-preview.png" alt="github-doctrine" width="100%"></p>
+
+<div align="center">
+
+<a href="https://github.com/rtynbirf/github-doctrine"><img src="banner.png" width="100%" alt="github-doctrine — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+# КНИГА ДОКТРИНЫ
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/github-doctrine@main/banner.png" width="100%" alt="Штандарт github-doctrine: обсидиан и расплавленное золото, кузня rtynbirf" />
+</div>
+
+
+
+
 
 
 
